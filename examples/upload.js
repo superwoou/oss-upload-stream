@@ -1,20 +1,19 @@
 #!/usr/bin/env node
-var AWS      = require('aws-sdk'),
+var ALY      = require('aliyun-sdk'),
     zlib     = require('zlib'),
     fs       = require('fs');
 
 // Make sure AWS credentials are loaded.
-AWS.config.loadFromPath('./config.json');
+var config = require('./config.json');
 
 // Initialize a stream client.
-var s3Stream = require('../lib/s3-upload-stream.js')(new AWS.S3());
+var s3Stream = require('../lib/s3-upload-stream.js')(new ALY.OSS(config));
 
 // Create the streams
-var read = fs.createReadStream('./video.mp4');
-var compress = zlib.createGzip();
+var read = fs.createReadStream('/Users/Meteor/备份/LibreOffice_5.0.1_MacOS_x86-64.dmg');
 var upload = s3Stream.upload({
-  "Bucket": "bucket",
-  "Key": "video.mp4.gz"
+  "Bucket": "gkstorage2",
+  "Key": 'test.jpg'
 });
 
 // Handle errors.
@@ -33,4 +32,4 @@ upload.on('uploaded', function (details) {
 });
 
 // Pipe the incoming filestream through compression, and up to S3.
-read.pipe(compress).pipe(upload);
+read.pipe(upload);
