@@ -6,7 +6,7 @@ var ALY      = require('aliyun-sdk'),
 var config = require('./config.json');
 
 // Initialize a stream client.
-var s3Stream = require('../lib/s3-upload-stream.js')(new ALY.OSS(config));
+var s3Stream = require('../lib/oss-upload-stream.js')(new ALY.OSS(config));
 
 // Create the streams
 var read = fs.createReadStream('文件路径');

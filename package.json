@@ -1,14 +1,14 @@
 {
-  "name": "s3-upload-stream",
-  "description": "Writeable stream for uploading content of unknown size to S3 via the multipart API.",
+  "name": "oss-upload-stream",
+  "description": "Writeable stream for uploading content of unknown size to Aliyun OSS via the multipart API.",
   "version": "1.0.7",
   "author": {
-    "name": "Nathan Peck",
-    "email": "nathan@storydesk.com"
+    "name": "Meteor",
+    "email": "liuxingmatt@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/nathanpeck/s3-upload-stream.git"
+    "url": "git://github.com/meteormatt/oss-upload-stream.git"
   },
   "devDependencies": {
     "mocha":      "1.17.1",
@@ -17,18 +17,18 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "aws-sdk": "2.x"
+    "aliyun-sdk": "1.x"
   },
   "keywords": [
-    "aws",
-    "s3",
+    "aliyun",
+    "oss",
     "upload",
     "pipe",
     "stream"
   ],
   "license": "MIT",
   "readmeFilename": "README.md",
-  "main": "./lib/s3-upload-stream.js",
+  "main": "./lib/oss-upload-stream.js",
   "engines": {
 	  "node": ">=0.10.x"
   },
