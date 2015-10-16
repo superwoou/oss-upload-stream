@@ -41,7 +41,7 @@ upload.on('uploaded', function (details) {
   console.log(details);
 });
 
-// Pipe the incoming filestream through compression, and up to Aliyun OSS.
+// Pipe the incoming filestream through compression, and upload to Aliyun OSS.
 read.pipe(upload);
 
 ```
