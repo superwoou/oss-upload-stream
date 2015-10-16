@@ -1,19 +1,18 @@
 #!/usr/bin/env node
 var ALY      = require('aliyun-sdk'),
-    zlib     = require('zlib'),
     fs       = require('fs');
 
-// Make sure AWS credentials are loaded.
+// Make sure Aliyun credentials are loaded.
 var config = require('./config.json');
 
 // Initialize a stream client.
 var s3Stream = require('../lib/s3-upload-stream.js')(new ALY.OSS(config));
 
 // Create the streams
-var read = fs.createReadStream('/Users/Meteor/备份/LibreOffice_5.0.1_MacOS_x86-64.dmg');
+var read = fs.createReadStream('文件路径');
 var upload = s3Stream.upload({
-  "Bucket": "gkstorage2",
-  "Key": 'test.jpg'
+  "Bucket": "你的bucket",
+  "Key": '文件名称'
 });
 
 // Handle errors.
@@ -31,5 +30,5 @@ upload.on('uploaded', function (details) {
   console.log(details);
 });
 
-// Pipe the incoming filestream through compression, and up to S3.
+// Pipe the incoming filestream through compression, and up to Aliyun OSS.
 read.pipe(upload);
