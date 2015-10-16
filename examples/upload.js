@@ -27,8 +27,11 @@ upload.on('part', function (details) {
 
 // Handle upload completion.
 upload.on('uploaded', function (details) {
+  var delta = (new Date() - startTime) / 1000;
   console.log(details);
+  console.log('Completed upload in', delta, 'seconds');
 });
 
 // Pipe the incoming filestream through compression, and up to Aliyun OSS.
 read.pipe(upload);
+var startTime = new Date();
