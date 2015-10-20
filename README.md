@@ -6,7 +6,7 @@ Fork from [s3-upload-stream](https://github.com/nathanpeck/s3-upload-stream).
 
 ### 介绍
 
-阿里云官方的`Node.js``OSS`[SDK](https://github.com/aliyun-UED/aliyun-sdk-js) 不支持`stream`方式上传文件. 
+阿里云官方的Node.js SDK [aliyun-sdk](https://github.com/aliyun-UED/aliyun-sdk-js) 不支持`stream`方式上传文件到OSS. 
 所以我尝试修改了[s3-upload-stream](https://github.com/nathanpeck/s3-upload-stream), 然后移植在[aliyun-sdk](https://github.com/aliyun-UED/aliyun-sdk-js)上.
 
 项目取名`oss-upload-stream`, 并发布到`npm`上.
