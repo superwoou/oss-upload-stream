@@ -1,7 +1,7 @@
 {
   "name": "oss-upload-stream",
   "description": "Writeable stream for uploading content of unknown size to Aliyun OSS via the multipart API.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Meteor",
     "email": "liuxingmatt@gmail.com"
