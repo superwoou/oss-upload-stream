@@ -2,9 +2,9 @@ var expect     = require('chai').expect,
     fs         = require('fs'),
     Writable   = require('stream').Writable;
 
-// Define a stubbed out version of the AWS S3 Node.js client
-var AWSstub = {
-  S3: function () {
+// Define a stubbed out version of the Aliyun OSS Node.js client
+var ALYstub = {
+  OSS: function () {
     this.createMultipartUpload = function (details, callback) {
       // Make sure that this AWS function was called with the right parameters.
       expect(details).to.have.property('Bucket');
@@ -83,13 +83,13 @@ var AWSstub = {
       expect(details).to.have.property('UploadId');
       expect(details.UploadId).to.contain('upload-id');
 
-      expect(details).to.have.property('MultipartUpload');
-      expect(details.MultipartUpload).to.an.object;
+      expect(details).to.have.property('CompleteMultipartUpload');
+      expect(details.CompleteMultipartUpload).to.an.object;
 
-      expect(details.MultipartUpload).to.have.property('Parts');
-      expect(details.MultipartUpload.Parts).to.an.array;
+      expect(details.CompleteMultipartUpload).to.have.property('Parts');
+      expect(details.CompleteMultipartUpload.Parts).to.an.array;
 
-      details.MultipartUpload.Parts.forEach(function (partNumber) {
+      details.CompleteMultipartUpload.Parts.forEach(function (partNumber) {
         expect(partNumber).to.be.an.integer;
       });
 
@@ -106,14 +106,14 @@ var AWSstub = {
   }
 };
 
-var s3StreamClient = require('../lib/s3-upload-stream.js')(new AWSstub.S3());
+var ossStreamClient = require('../lib/oss-upload-stream.js')(new ALYstub.OSS());
 
 describe('Creating upload client', function () {
-  describe('Without specifying an S3 client', function () {
+  describe('Without specifying an OSS client', function () {
     var uploadStream;
 
     it('should throw an error', function (done) {
-      var BadStreamClient = require('../lib/s3-upload-stream.js');
+      var BadStreamClient = require('../lib/oss-upload-stream.js');
 
       try {
         uploadStream = BadStreamClient.upload({
@@ -129,11 +129,11 @@ describe('Creating upload client', function () {
     });
   });
 
-  describe('After specifying an S3 client', function () {
+  describe('After specifying an OSS client', function () {
     var uploadStream;
 
     it('should return an instance of Writable stream', function () {
-      var GoodStreamClient = require('../lib/s3-upload-stream.js')(new AWSstub.S3());
+      var GoodStreamClient = require('../lib/oss-upload-stream.js')(new ALYstub.OSS());
 
       uploadStream = GoodStreamClient.upload({
         "Bucket": "test-bucket-name",
@@ -153,7 +153,7 @@ describe('Stream Methods', function () {
   var uploadStream;
 
   before(function (done) {
-    uploadStream = s3StreamClient.upload({
+    uploadStream = ossStreamClient.upload({
       "Bucket": "test-bucket-name",
       "Key": "test-file-name"
     });
@@ -206,7 +206,7 @@ describe('Piping data into the writable upload stream', function () {
   var uploadStream;
 
   before(function (done) {
-    uploadStream = s3StreamClient.upload({
+    uploadStream = ossStreamClient.upload({
       "Bucket": "test-bucket-name",
       "Key": "test-file-name"
     });
@@ -283,7 +283,7 @@ describe('Piping data into a resumed upload stream', function () {
   var uploadStream;
 
   before(function (done) {
-    uploadStream = s3StreamClient.upload({
+    uploadStream = ossStreamClient.upload({
       Bucket: "test-bucket-name",
       Key: "test-file-name"
     }, {
@@ -359,10 +359,10 @@ describe('Piping data into a resumed upload stream', function () {
   });
 });
 
-describe('S3 Error catching', function () {
+describe('OSS Error catching', function () {
   describe('Error creating multipart upload', function () {
     it('should emit an error', function (done) {
-      var uploadStream = s3StreamClient.upload({
+      var uploadStream = ossStreamClient.upload({
         "Bucket": "test-bucket-name",
         "Key": "create-fail"
       });
@@ -383,7 +383,7 @@ describe('S3 Error catching', function () {
     var uploadStream;
 
     before(function (done) {
-      uploadStream = s3StreamClient.upload({
+      uploadStream = ossStreamClient.upload({
         "Bucket": "test-bucket-name",
         "Key": "upload-fail"
       });
@@ -412,7 +412,7 @@ describe('S3 Error catching', function () {
     var uploadStream;
 
     before(function (done) {
-      uploadStream = s3StreamClient.upload({
+      uploadStream = ossStreamClient.upload({
         "Bucket": "test-bucket-name",
         "Key": "complete-fail"
       });
@@ -441,7 +441,7 @@ describe('S3 Error catching', function () {
     var uploadStream;
 
     before(function (done) {
-      uploadStream = s3StreamClient.upload({
+      uploadStream = ossStreamClient.upload({
         "Bucket": "test-bucket-name",
         "Key": "abort-fail"
       });
