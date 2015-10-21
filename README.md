@@ -1,5 +1,7 @@
 ## oss-upload-stream
 
+[![Build Status](https://travis-ci.org/meteormatt/oss-upload-stream.svg?branch=master)](https://travis-ci.org/meteormatt/oss-upload-stream)
+
 A pipeable write stream which uploads to Aliyun OSS using the multipart file upload API.
 
 Fork from [s3-upload-stream](https://github.com/nathanpeck/s3-upload-stream).
