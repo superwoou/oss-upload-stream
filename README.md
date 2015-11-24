@@ -1,6 +1,8 @@
 ## oss-upload-stream
 
 [![Build Status](https://travis-ci.org/meteormatt/oss-upload-stream.svg?branch=master)](https://travis-ci.org/meteormatt/oss-upload-stream)
+[![Dependencies](https://david-dm.org/meteormatt/oss-upload-stream.svg)](https://david-dm.org/meteormatt/oss-upload-stream)
+[![peerDependencies](https://david-dm.org/meteormatt/oss-upload-stream/peer-status.svg)](https://david-dm.org/meteormatt/oss-upload-stream)
 
 A pipeable write stream which uploads to Aliyun OSS using the multipart file upload API.
 
