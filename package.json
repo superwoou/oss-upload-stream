@@ -11,9 +11,11 @@
     "url": "git://github.com/meteormatt/oss-upload-stream.git"
   },
   "devDependencies": {
-    "mocha":      "1.17.1",
-    "aliyun-sdk":    "~1.6.0",
-    "chai":       "1.8.1"
+    "aliyun-sdk": "~1.6.0",
+    "chai": "1.8.1",
+    "coveralls": "^2.11.4",
+    "mocha": "1.17.1",
+    "mocha-lcov-reporter": "^1.0.0"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -30,7 +32,7 @@
   "readmeFilename": "README.md",
   "main": "./lib/oss-upload-stream.js",
   "engines": {
-	  "node": ">=0.10.x"
+    "node": ">=0.10.x"
   },
   "scripts": {
     "test": "mocha -R spec -s 100 ./tests/test.js"
