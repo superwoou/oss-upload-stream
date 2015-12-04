@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/oss-upload-stream.svg)](https://badge.fury.io/js/oss-upload-stream)
 [![cnpm version](https://npm.taobao.org/badge/v/oss-upload-stream.svg)](https://npm.taobao.org/package/oss-upload-stream)
 [![Build Status](https://travis-ci.org/meteormatt/oss-upload-stream.svg?branch=master)](https://travis-ci.org/meteormatt/oss-upload-stream)
+[![CodeShip Status](https://img.shields.io/codeship/9d423a50-5ace-0133-11b8-624f61fe64ff.svg)](https://codeship.com/projects/110510)
 [![Dependency Status](https://david-dm.org/meteormatt/oss-upload-stream.svg)](https://david-dm.org/meteormatt/oss-upload-stream)
 [![Coverage Status](https://coveralls.io/repos/meteormatt/oss-upload-stream/badge.svg?branch=master&service=github)](https://coveralls.io/github/meteormatt/oss-upload-stream?branch=master)
 
