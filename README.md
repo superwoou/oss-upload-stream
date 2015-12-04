@@ -1,6 +1,7 @@
 ## oss-upload-stream
 
 [![npm version](https://badge.fury.io/js/oss-upload-stream.svg)](https://badge.fury.io/js/oss-upload-stream)
+[![cnpm version](https://npm.taobao.org/badge/v/oss-upload-stream.svg)](https://npm.taobao.org/package/oss-upload-stream)
 [![Build Status](https://travis-ci.org/meteormatt/oss-upload-stream.svg?branch=master)](https://travis-ci.org/meteormatt/oss-upload-stream)
 [![Dependency Status](https://david-dm.org/meteormatt/oss-upload-stream.svg)](https://david-dm.org/meteormatt/oss-upload-stream)
 [![Coverage Status](https://coveralls.io/repos/meteormatt/oss-upload-stream/badge.svg?branch=master&service=github)](https://coveralls.io/github/meteormatt/oss-upload-stream?branch=master)
