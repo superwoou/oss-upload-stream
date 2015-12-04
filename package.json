@@ -36,6 +36,6 @@
     "node": ">=0.10.x"
   },
   "scripts": {
-    "test": "mocha -R spec -s 100 ./tests/test.js"
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec tests && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   }
 }
