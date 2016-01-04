@@ -1,7 +1,7 @@
 {
   "name": "oss-upload-stream",
   "description": "Writeable stream for uploading content of unknown size to Aliyun OSS via the multipart API.",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "author": {
     "name": "Meteor",
     "email": "liuxingmatt@gmail.com"
@@ -11,17 +11,14 @@
     "url": "git://github.com/meteormatt/oss-upload-stream.git"
   },
   "devDependencies": {
-    "aliyun-sdk": "~1.6.0",
-    "chai": "1.8.1",
+    "aliyun-sdk": "~1.7.6",
+    "chai": "3.4.1",
     "coveralls": "^2.11.4",
     "istanbul": "^0.4.1",
-    "mocha": "1.17.1",
+    "mocha": "2.3.4",
     "mocha-lcov-reporter": "^1.0.0"
   },
   "dependencies": {},
-  "peerDependencies": {
-    "aliyun-sdk": "~1.6.0"
-  },
   "keywords": [
     "aliyun",
     "oss",
