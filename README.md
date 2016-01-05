@@ -77,3 +77,11 @@ npm test
 ### 许可证
 
 [Mozilla 公共许可协议](http://mozillachina.github.io/MPL/)
+
+### 附录
+
+本项目和[aliyun-oss-upload-stream](https://github.com/berwin/aliyun-oss-upload-stream)的区别.
+
+`aliyun-oss-upload-stream`是从本项目fork出去的,增加了中文注释,然后改头换面,隐藏了出处.
+![](http://ww4.sinaimg.cn/large/474ac5b3gw1ezoews1udtj20yk042dgl.jpg)
+我个人认为开源项目应该保持fork的属性,并且指明出处
