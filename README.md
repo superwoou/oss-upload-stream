@@ -84,4 +84,4 @@ npm test
 
 `aliyun-oss-upload-stream`是从本项目fork出去的,增加了中文注释,然后改头换面,隐藏了出处.
 ![](http://ww4.sinaimg.cn/large/474ac5b3gw1ezoews1udtj20yk042dgl.jpg)
-我个人认为开源项目应该保持fork的属性,并且指明出处
+我个人认为开源项目应该保持fork的属性,并且指明出处.
