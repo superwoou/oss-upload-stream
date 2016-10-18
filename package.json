@@ -1,14 +1,13 @@
 {
   "name": "oss-upload-stream",
   "description": "Writeable stream for uploading content of unknown size to Aliyun OSS via the multipart API.",
-  "version": "1.1.1",
   "author": {
     "name": "Meteor",
     "email": "liuxingmatt@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/meteormatt/oss-upload-stream.git"
+    "url": "https://github.com/meteormatt/oss-upload-stream.git"
   },
   "devDependencies": {
     "aliyun-sdk": "~1.7.6",
@@ -16,7 +15,8 @@
     "coveralls": "^2.11.4",
     "istanbul": "^0.4.1",
     "mocha": "2.3.4",
-    "mocha-lcov-reporter": "^1.0.0"
+    "mocha-lcov-reporter": "^1.0.0",
+    "semantic-release": "^4.3.5"
   },
   "dependencies": {},
   "keywords": [
@@ -33,6 +33,7 @@
     "node": ">=0.10.x"
   },
   "scripts": {
-    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec tests && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec tests && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
